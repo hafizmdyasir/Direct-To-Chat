@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/drawable/ic_fluent_chevron_down_20_regular.xml" value="0.19283387622149836" />
+        <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/layout/activity_country_select.xml" value="0.18453947368421053" />
+        <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/layout/country_list_item.xml" value="0.18453947368421053" />
+        <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/layout/fragment_about.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

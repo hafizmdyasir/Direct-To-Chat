@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CountrySelectorActivity"
+
+    android:theme="@style/WhatsAppDirect"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/headerLayout">
+
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Headline1"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:textColor="?android:attr/colorForeground"
+            android:autoSizeTextType="uniform"
+            android:paddingHorizontal="16dp"
+            android:text="@string/select_country"
+            android:id="@+id/header"
+            android:textSize="38sp"
+            android:maxLines="1"
+            />
+
+        <TextView
+            android:background="@drawable/rounded_rectangle"
+            android:textColor="@android:color/white"
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="16dp"
+
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="2dp"
+            android:id="@+id/counter"
+            tools:text="328"/>
+
+    </LinearLayout>
+
+    <TextView
+        style="@style/BodyHeader"
+        android:text="@string/device_default"
+        android:id="@+id/defaultHeader"/>
+
+    <include layout="@layout/country_list_item"
+        android:id="@+id/device_default"/>
+
+    <TextView
+        style="@style/BodyHeader"
+        android:text="@string/all_countries" />
+
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/country_list_item"
+            tools:itemCount="2"
+
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:overScrollMode="never"
+            android:id="@+id/recycler"/>
+
+        <com.l4digital.fastscroll.FastScroller
+            app:bubbleColor="?attr/colorPrimary"
+            app:handleColor="?attr/colorPrimary"
+            app:hideScrollbar="false"
+            app:bubbleTextSize="22sp"
+            app:bubbleSize="small"
+
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="end"
+            android:id="@+id/scroller"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

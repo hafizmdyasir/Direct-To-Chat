@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".FragmentAbout"
+
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingTop="8dp"
+    >
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+
+        android:textColor="?attr/colorPrimary"
+        android:autoSizeTextType="uniform"
+        android:textSize="26sp"
+        android:text="@string/about"
+        android:maxLines="1"/>
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/about_app"
+        android:id="@+id/about_app"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+
+        android:textColor="?attr/colorPrimary"
+        android:id="@+id/attributions_header"
+        android:text="@string/attributions"
+        android:textSize="26sp"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/country_icons"
+        android:id="@+id/flags_attribute"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginHorizontal="16dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/fluent_icons"
+        android:id="@+id/fluent_attribute"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginHorizontal="16dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/fast_scroller"
+        android:id="@+id/scroller_attribute"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/sent_icon"
+        android:id="@+id/icon_attribute"
+        />
+
+    <Button
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginHorizontal="16dp"
+        android:textColor="?attr/colorAccent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/name"
+        android:id="@+id/more"/>
+
+</LinearLayout>

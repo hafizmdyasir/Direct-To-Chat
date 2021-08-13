@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="WhatsAppDirect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryMain</item>
+        <item name="colorPrimaryVariant">@color/primaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondaryVariant">@color/accentDark</item>
+        <item name="colorSecondary">@color/accentSoft</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?android:attr/windowBackground</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

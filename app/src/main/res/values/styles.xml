@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="SendButtons">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextFormatButtons" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="iconTint">?attr/colorAccent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="BodyHeader" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+    </style>
+
+</resources>
