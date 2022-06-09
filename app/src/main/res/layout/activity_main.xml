@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,239 +8,218 @@
     android:theme="@style/WhatsAppDirect"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical"
+    android:fillViewport="true"
     >
 
-    <TextView
-        style="@style/TextAppearance.MaterialComponents.Headline1"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-
-        android:textColor="@color/primaryMain"
-        android:layout_marginHorizontal="16dp"
-        android:autoSizeTextType="uniform"
-        android:text="@string/app_name"
-        android:textSize="38sp"
-        android:maxLines="1"/>
-
-
-    <TextView
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="8dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:textColor="?android:attr/colorControlNormal"
-        android:text="@string/app_description"
-        android:justificationMode="inter_word"
-        android:id="@+id/description"/>
-
-    <TextView
-        android:text="@string/phone_number"
-        style="@style/BodyHeader"/>
-
     <LinearLayout
-        android:layout_marginHorizontal="16dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Headline1"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+
+            android:textColor="@color/primaryMain"
+            android:layout_marginHorizontal="16dp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/app_name"
+            android:textSize="38sp"
+            android:maxLines="1" />
+
+
+        <TextView
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:textColor="?android:attr/colorControlNormal"
+            android:text="@string/app_description"
+            android:justificationMode="inter_word"
+            android:id="@+id/description" />
+
+        <TextView
+            android:text="@string/phone_number"
+            style="@style/BodyHeader" />
 
         <LinearLayout
-            android:background="?attr/selectableItemBackground"
-
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:gravity="center_vertical"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:id="@+id/selectCountry"
-            >
+            android:gravity="center_vertical">
 
-            <ImageView
-                android:contentDescription="@string/country_flag"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:layout_width="28dp"
-                android:src="@mipmap/in"
-                android:id="@+id/flag"/>
+            <LinearLayout
+                android:background="?attr/selectableItemBackground"
 
-            <TextView
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@+id/selectCountry">
+
+                <ImageView
+                    android:contentDescription="@string/country_flag"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:layout_width="28dp"
+                    android:src="@mipmap/in"
+                    android:id="@+id/flag" />
+
+                <TextView
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/plus" />
+
+                <TextView
+                    app:drawableEndCompat="@drawable/ic_fluent_chevron_down_20_regular"
+                    android:drawablePadding="8dp"
+
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/isdCode"
+                    tools:text="91" />
+
+            </LinearLayout>
+
+
+            <EditText
                 style="@style/TextAppearance.MaterialComponents.Subtitle1"
                 android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_marginStart="8dp"
-                android:text="@string/plus"/>
 
-            <TextView
-                app:drawableEndCompat="@drawable/ic_fluent_chevron_down_20_regular"
-                android:drawablePadding="8dp"
-
-                style="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:id="@+id/isdCode"
-                tools:text="91"/>
+                android:hint="@string/enter_number"
+                android:importantForAutofill="no"
+                android:id="@+id/numberEntry"
+                android:inputType="phone"
+                android:maxLines="1" />
 
         </LinearLayout>
 
+        <TextView
+            android:text="@string/message"
+            style="@style/BodyHeader" />
 
         <EditText
             style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_marginHorizontal="16dp"
+            android:gravity="top"
+
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginStart="8dp"
+            android:maxHeight="120dp"
 
-            android:hint="@string/enter_number"
+            android:inputType="text|textMultiLine"
+            android:scrollHorizontally="false"
             android:importantForAutofill="no"
-            android:id="@+id/numberEntry"
-            android:inputType="phone"
-            android:maxLines="1"
-            />
-
-    </LinearLayout>
-    <!--
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-
-            app:boxBackgroundColor="@android:color/transparent"
-            app:boxCornerRadiusTopStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxBackgroundMode="outline"
-
-            android:layout_width="match_parent"
             android:hint="@string/enter_text"
-            android:layout_height="120dp"
-            android:id="@+id/textContainer"
-            >-->
+            android:id="@+id/text" />
 
-    <TextView
-        android:text="@string/message"
-        style="@style/BodyHeader"/>
+        <TextView
+            android:text="@string/format"
+            style="@style/BodyHeader" />
 
-    <EditText
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
-        android:layout_marginHorizontal="16dp"
-        android:gravity="top"
+        <TableLayout
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/formatContainer"
+            android:stretchColumns="*">
 
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:maxHeight="120dp"
+            <TableRow>
 
-        android:inputType="text|textMultiLine"
-        android:scrollHorizontally="false"
-        android:importantForAutofill="no"
-        android:hint="@string/enter_text"
-        android:id="@+id/text"/>
+                <Button
+                    app:icon="@drawable/ic_fluent_text_bold_20_regular"
+                    style="@style/TextFormatButtons"
+                    android:textStyle="bold"
+                    android:id="@+id/bold"
+                    android:text="@string/bold" />
 
-    <TextView
-        android:text="@string/format"
-        style="@style/BodyHeader"
-        />
+                <Button
+                    app:icon="@drawable/ic_fluent_text_italic_20_regular"
+                    android:layout_marginStart="12dp"
+                    style="@style/TextFormatButtons"
+                    android:textStyle="italic"
+                    android:id="@+id/italic"
+                    android:text="@string/italics" />
 
-    <TableLayout
-        android:layout_marginHorizontal="16dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/formatContainer"
-        android:stretchColumns="*">
+            </TableRow>
 
-        <TableRow>
+            <TableRow>
 
-            <Button
-                app:icon="@drawable/ic_fluent_text_bold_20_regular"
-                style="@style/TextFormatButtons"
-                android:textStyle="bold"
-                android:id="@+id/bold"
-                android:text="@string/bold"
-                />
+                <Button
+                    app:icon="@drawable/ic_fluent_text_strikethrough_20_regular"
+                    style="@style/TextFormatButtons"
+                    android:text="@string/strikethrough"
+                    android:id="@+id/strike" />
 
-            <Button
-                app:icon="@drawable/ic_fluent_text_italic_20_regular"
-                android:layout_marginStart="12dp"
-                style="@style/TextFormatButtons"
-                android:textStyle="italic"
-                android:id="@+id/italic"
-                android:text="@string/italics"
-                />
+                <Button
+                    app:icon="@drawable/ic_fluent_text_column_one_wide_20_regular"
+                    android:layout_marginStart="12dp"
+                    style="@style/TextFormatButtons"
+                    android:typeface="monospace"
+                    android:text="@string/monospace"
+                    android:id="@+id/mono" />
 
-        </TableRow>
+            </TableRow>
 
-        <TableRow>
+        </TableLayout>
 
-            <Button
-                app:icon="@drawable/ic_fluent_text_strikethrough_20_regular"
-                style="@style/TextFormatButtons"
-                android:text="@string/strikethrough"
-                android:id="@+id/strike"
-                />
-
-            <Button
-                app:icon="@drawable/ic_fluent_text_column_one_wide_20_regular"
-                android:layout_marginStart="12dp"
-                style="@style/TextFormatButtons"
-                android:typeface="monospace"
-                android:text="@string/monospace"
-                android:id="@+id/mono"
-                />
-
-        </TableRow>
-
-    </TableLayout>
-
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_margin="16dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_marginHorizontal="16dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/toggle_about"
-        android:text="@string/about"
-        />
-
-    <LinearLayout
-        android:layout_marginBottom="8dp"
-        android:gravity="center_vertical|end"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:id="@+id/sendButtons">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <com.google.android.material.button.MaterialButton
-            app:icon="@drawable/ic_fluent_send_20_regular"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="6dp"
-            android:backgroundTint="#325666"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginHorizontal="16dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/toggle_about"
+            android:text="@string/about" />
 
-            android:text="@string/wa_business"
-            android:id="@+id/send_business"
-            style="@style/SendButtons"
-            android:minHeight="52dp"
-            />
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:gravity="center_vertical|end"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/sendButtons">
 
-        <com.google.android.material.button.MaterialButton
-            app:icon="@drawable/ic_fluent_send_20_regular"
-            android:layout_marginVertical="8dp"
-            android:backgroundTint="#388E3C"
-            android:layout_marginStart="6dp"
-            android:layout_marginEnd="16dp"
+            <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/ic_fluent_send_20_regular"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="6dp"
+                android:backgroundTint="#325666"
 
-            android:text="@string/whatsapp"
-            style="@style/SendButtons"
-            android:minHeight="52dp"
-            android:id="@+id/send"
-            />
+                android:text="@string/wa_business"
+                android:id="@+id/send_business"
+                style="@style/SendButtons"
+                android:minHeight="52dp" />
+
+            <com.google.android.material.button.MaterialButton
+                app:icon="@drawable/ic_fluent_send_20_regular"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="#388E3C"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="16dp"
+
+                android:text="@string/whatsapp"
+                style="@style/SendButtons"
+                android:minHeight="52dp"
+                android:id="@+id/send" />
 
 
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
+</ScrollView>

@@ -10,7 +10,7 @@
 
     <style name="TextFormatButtons" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">?attr/colorAccent</item>
         <item name="iconTint">?attr/colorAccent</item>
         <item name="android:textAllCaps">false</item>
