@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Headline1"
+        android:text="@string/isd_code_detected"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+
+        android:textColor="?attr/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="26sp"
+        />
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="4dp"
+
+        android:text="@string/isd_detected_message"
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/message"
+        />
+
+    <TextView
+        android:paddingHorizontal="16dp"
+        android:layout_margin="0dp"
+        android:paddingTop="12dp"
+        style="@style/BodyHeader"
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/country"/>
+
+    <include
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        layout="@layout/country_list_item"
+        android:id="@+id/detectedCountry"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:paddingHorizontal="16dp"
+        android:layout_margin="0dp"
+        android:paddingTop="12dp"
+        style="@style/BodyHeader"
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/phone_number"/>
+
+    <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        tools:text="1234567890"
+
+        android:justificationMode="inter_word"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:id="@+id/phoneNumber"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="?attr/colorAccent"
+            android:text="@android:string/cancel"
+            android:id="@+id/cancel_button"
+
+            android:layout_marginVertical="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:backgroundTint="?attr/colorAccent"
+            android:textColor="?android:attr/colorForeground"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:layout_marginVertical="24dp"
+            android:text="@string/ok_continue"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:id="@+id/ok_continue"
+            tools:ignore="ButtonStyle" />
+
+    </LinearLayout>
+
+</LinearLayout>

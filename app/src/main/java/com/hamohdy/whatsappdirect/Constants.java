@@ -7,8 +7,9 @@ import java.util.List;
  * The Constants class holds a list of {@link com.hamohdy.whatsappdirect.Country} instances that each represent a country.
  *
  * The list was obtained online from Wikipedia and the flags were obtained via Flagpedia.net.
- * It was easy to create the code for this class using a combination of .csv files and MS Notepad's Replace feature
- * Some flags weren't present and addition to the list will be highly appreciated.
+ * It was easy to create the code for this class using a combination of .csv files and MS Notepad's Replace feature.
+ *
+ * Some flags weren't present and additions to the list will be highly appreciated.
  * */
 public class Constants {
 

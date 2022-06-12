@@ -15,7 +15,7 @@
         <item name="colorSecondary">@color/accentSoft</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?android:attr/windowBackground</item>
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
         <!-- Customize your theme here. -->
     </style>
 </resources>

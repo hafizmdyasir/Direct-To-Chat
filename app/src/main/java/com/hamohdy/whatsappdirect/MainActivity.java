@@ -1,7 +1,7 @@
 package com.hamohdy.whatsappdirect;
 
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,10 +18,14 @@ import com.hamohdy.whatsappdirect.databinding.ActivityMainBinding;
 
 import java.util.Locale;
 
-/**This is the home page. This is where the magic happens.*/
+/**
+ * This is the home page. This is where the magic happens.
+ */
 public class MainActivity extends AppCompatActivity implements ActivityResultCallback<ActivityResult> {
 
-    /**Launches the {@link CountrySelectorActivity} to pick an isd code.*/
+    /**
+     * Launches the {@link CountrySelectorActivity} to pick an isd code.
+     */
     private final ActivityResultLauncher<Intent> launcher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), this);
     private Country selectedCountry = null;
@@ -36,10 +40,13 @@ public class MainActivity extends AppCompatActivity implements ActivityResultCal
         View root = binding.getRoot();
         setContentView(root);
 
-        //Dark status bar text during day.
+        //Dark status bar foreground during day.
         if (!getResources().getBoolean(R.bool.nightMode)) {
             WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), root);
             controller.setAppearanceLightStatusBars(true);
+        } else {
+            root.setBackgroundColor(Color.BLACK);
+            getWindow().setStatusBarColor(Color.BLACK);
         }
 
         //means default country hasn't been loaded and neither has the user selected a country
@@ -88,8 +95,8 @@ public class MainActivity extends AppCompatActivity implements ActivityResultCal
         String deviceCountryCode = Locale.getDefault().getCountry();
 
         //Search for the entry in list of countries whose iso code matches the device country's iso code.
-        for (Country entry: Constants.countries) {
-            if(deviceCountryCode.equalsIgnoreCase(entry.isoCode)) {
+        for (Country entry : Constants.countries) {
+            if (deviceCountryCode.equalsIgnoreCase(entry.isoCode)) {
                 countrySelected(entry);
                 int finalCount = count;
                 binding.selectCountry.setOnClickListener(v -> {
@@ -105,65 +112,83 @@ public class MainActivity extends AppCompatActivity implements ActivityResultCal
 
     /**
      * Using the {@link android.widget.TextView#onKeyDown(int, KeyEvent)} method, it is easy to insert the required characters.
-     *
+     * <p>
      * Bold is created via asterisk (*).
      * Italics are created using the underscore character.
-     * For strikethrough text, you need the tilde symbol.
-     * And for mono text, you need three grave characters.*/
+     * For strikethrough optionalMessage, you need the tilde symbol.
+     * And for mono optionalMessage, you need three grave characters.
+     */
     private void formatClicked(View v) {
 
         int id = v.getId();
 
         //bold is easy via the asterisk or star symbol.
         if (id == R.id.bold) {
-            binding.text.onKeyDown(KeyEvent.KEYCODE_STAR, new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_STAR));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_STAR, new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_STAR));
-            binding.text.setSelection(binding.text.getSelectionEnd()-1);
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_STAR, new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_STAR));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_STAR, new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_STAR));
+            binding.optionalMessage.setSelection(binding.optionalMessage.getSelectionEnd() - 1);
         }
 
         //The minus keycode with shift on creates underscore
         else if (id == R.id.italic) {
-            binding.text.onKeyDown(KeyEvent.KEYCODE_MINUS, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MINUS,0, KeyEvent.META_SHIFT_ON));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_MINUS, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MINUS,0, KeyEvent.META_SHIFT_ON));
-            binding.text.setSelection(binding.text.getSelectionEnd()-1);
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_MINUS, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MINUS, 0, KeyEvent.META_SHIFT_ON));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_MINUS, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MINUS, 0, KeyEvent.META_SHIFT_ON));
+            binding.optionalMessage.setSelection(binding.optionalMessage.getSelectionEnd() - 1);
         }
 
         //The grave character with shift pressed creates tilde.
         else if (id == R.id.strike) {
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, KeyEvent.META_SHIFT_ON));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, KeyEvent.META_SHIFT_ON));
-            binding.text.setSelection(binding.text.getSelectionEnd()-1);
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, KeyEvent.META_SHIFT_ON));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, KeyEvent.META_SHIFT_ON));
+            binding.optionalMessage.setSelection(binding.optionalMessage.getSelectionEnd() - 1);
         }
 
-        //The grave character allows for mono text but metastate has to be zero.
+        //The grave character allows for mono optionalMessage but metastate has to be zero.
         else if (id == R.id.mono) {
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(),System.currentTimeMillis(),KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE,0, 0));
-            binding.text.setSelection(binding.text.getSelectionEnd() - 3);
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.onKeyDown(KeyEvent.KEYCODE_GRAVE, new KeyEvent(System.currentTimeMillis(), System.currentTimeMillis(), KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_GRAVE, 0, 0));
+            binding.optionalMessage.setSelection(binding.optionalMessage.getSelectionEnd() - 3);
         }
-        binding.text.requestFocus();
+        binding.optionalMessage.requestFocus();
     }
 
     private void sendClicked(boolean business) {
 
-        if (binding.numberEntry.length() == 0) {
+        //If the waNumber field has null text or is empty, or has nothing but a plus sign, handle.
+        if (binding.waNumber.getText() == null || binding.waNumber.getText().length() == 0 || binding.waNumber.getText().toString().equals("+")) {
             Toast.makeText(this, getString(R.string.enter_number_warn), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String phone = binding.numberEntry.getText().toString();
-        String code = selectedCountry.isdCode;
-        String message = binding.text.getText() == null ? "" : binding.text.getText().toString();
+        String phoneNumber = binding.waNumber.getText().toString();
+        //We don't want an NPE, so use use an empty string if message is null.
+        String message = binding.optionalMessage.getText() == null ? "" : binding.optionalMessage.getText().toString();
 
-        String total = "https://api.whatsapp.com/send?phone=" + code + phone + "&text=" + message;
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(total));
 
-        intent.setPackage(business ? "com.whatsapp.w4b" : "com.whatsapp");
+        //If the user entered a phone number along with ISD code, alert them.
+        //Note that for now, this relies on the presence of the "+" symbol in the number.
+        if (phoneNumber.contains("+")) {
+            FragmentIsdDetected
+                    .newInstance(phoneNumber)
+                    .setDialogClickListener( () -> {
+                        Intent launchIntent = Utilities.getLaunchIntent(phoneNumber, message, business);
+                        if (launchIntent.resolveActivity(getPackageManager()) != null)
+                            startActivity(launchIntent);
+                        else
+                            Toast.makeText(this, getString(R.string.not_installed), Toast.LENGTH_SHORT).show();
+                        
+                    })
+                    .show(getSupportFragmentManager(), "ISD DETECTED");
+            return;
+        }
+
+        String phoneNumberWithIsd = selectedCountry.isdCode + phoneNumber;
+        Intent intent = Utilities.getLaunchIntent(phoneNumberWithIsd, message, business);
+
         if (intent.resolveActivity(getPackageManager()) != null) startActivity(intent);
         else Toast.makeText(this, getString(R.string.not_installed), Toast.LENGTH_SHORT).show();
     }

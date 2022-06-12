@@ -1,6 +1,7 @@
 package com.hamohdy.whatsappdirect;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -29,6 +30,9 @@ public class CountrySelectorActivity extends AppCompatActivity implements Countr
         if (!getResources().getBoolean(R.bool.nightMode)) {
             WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), root);
             controller.setAppearanceLightStatusBars(true);
+        } else {
+            root.setBackgroundColor(Color.BLACK);
+            getWindow().setStatusBarColor(Color.BLACK);
         }
 
         binding.counter.setText(Constants.size);

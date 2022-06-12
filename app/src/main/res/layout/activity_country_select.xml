@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
 
-            android:textColor="?android:attr/colorForeground"
+            android:textColor="?attr/colorPrimary"
             android:autoSizeTextType="uniform"
             android:paddingHorizontal="16dp"
             android:text="@string/select_country"
@@ -76,8 +76,8 @@
             android:id="@+id/recycler"/>
 
         <com.l4digital.fastscroll.FastScroller
-            app:bubbleColor="?attr/colorPrimary"
-            app:handleColor="?attr/colorPrimary"
+            app:bubbleColor="?attr/colorAccent"
+            app:handleColor="?attr/colorAccent"
             app:hideScrollbar="false"
             app:bubbleTextSize="22sp"
             app:bubbleSize="small"

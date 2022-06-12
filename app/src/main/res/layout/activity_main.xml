@@ -98,7 +98,7 @@
 
                 android:hint="@string/enter_number"
                 android:importantForAutofill="no"
-                android:id="@+id/numberEntry"
+                android:id="@+id/waNumber"
                 android:inputType="phone"
                 android:maxLines="1" />
 
@@ -121,7 +121,7 @@
             android:scrollHorizontally="false"
             android:importantForAutofill="no"
             android:hint="@string/enter_text"
-            android:id="@+id/text" />
+            android:id="@+id/optionalMessage" />
 
         <TextView
             android:text="@string/format"
