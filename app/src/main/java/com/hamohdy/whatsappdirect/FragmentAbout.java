@@ -36,7 +36,7 @@ public class FragmentAbout extends BottomSheetDialogFragment {
 
         view.findViewById(R.id.more).setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://linktr.ee/hafizmdyasir"));
+            intent.setData(Uri.parse("https://hafizmdyasir.github.io"));
             startActivity(Intent.createChooser(intent, getString(R.string.open_via)));
         });
     }
