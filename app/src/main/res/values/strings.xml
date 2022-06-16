@@ -27,7 +27,6 @@
     <string name="format">Format</string>
     <string name="plus">+</string>
 
-    <string name="search_hint">Search by country name or ISO code.</string>
     <string name="device_default">Device Default</string>
     <string name="select_country">Select Country</string>
     <string name="all_countries">All Countries</string>
@@ -38,7 +37,6 @@
     <string name="isd_detected_message_no_country">It looks like you entered the ISD Code along with the phone number. We tried to detect what country it was, but were unable. Try removing the ISD code from the phone number and continuing again.\nYou can press ignore if you wish to continue anyway. </string>
     <string name="isd_detected_message">It looks like you entered the ISD Code along with the phone number. We have tried to detect the appropriate country and set it automatically. \nDid we get it right?</string>
     <string name="isd_code_detected">ISD Code Detected</string>
-    <string name="ignore">Ignore</string>
     <string name="ok_continue">Continue</string>
     <string name="country">Country</string>
 </resources>
