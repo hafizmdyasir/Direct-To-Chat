@@ -1,8 +1,11 @@
 package com.hamohdy.whatsappdirect;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.telephony.PhoneNumberUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Toast;
@@ -52,6 +55,31 @@ public class MainActivity extends AppCompatActivity implements ActivityResultCal
         //means default country hasn't been loaded and neither has the user selected a country
         if (selectedCountry == null) getDefaultCountry();
         setClickListeners();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        //check if clipboard has a phone number. This has to be in onResume so that
+        //the paste button becomes visible whenever the user copies and comes back to the activity.
+        ClipboardManager clipboardManager = getSystemService(ClipboardManager.class);
+        if (clipboardManager == null || !clipboardManager.hasPrimaryClip()) {
+            binding.paste.setVisibility(View.GONE);
+            return;
+        }
+
+        ClipData.Item clipItem = clipboardManager.getPrimaryClip().getItemAt(0);
+        if (clipItem.getText() != null) {
+            String copied = clipItem.getText().toString();
+            if (!PhoneNumberUtils.isGlobalPhoneNumber(copied)) {
+                binding.paste.setVisibility(View.GONE);
+                return;
+            }
+
+            binding.paste.setVisibility(View.VISIBLE);
+            binding.paste.setOnClickListener(v -> binding.waNumber.setText(copied));
+        } else binding.paste.setVisibility(View.GONE);
     }
 
     @Override

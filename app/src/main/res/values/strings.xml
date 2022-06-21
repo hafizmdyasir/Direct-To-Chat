@@ -39,4 +39,5 @@
     <string name="isd_code_detected">ISD Code Detected</string>
     <string name="ok_continue">Continue</string>
     <string name="country">Country</string>
+    <string name="paste">Paste</string>
 </resources>

@@ -32,7 +32,6 @@ public class FragmentAbout extends BottomSheetDialogFragment {
         ((TextView) view.findViewById(R.id.scroller_attribute)).setMovementMethod(LinkMovementMethod.getInstance());
         ((TextView) view.findViewById(R.id.fluent_attribute)).setMovementMethod(LinkMovementMethod.getInstance());
         ((TextView) view.findViewById(R.id.flags_attribute)).setMovementMethod(LinkMovementMethod.getInstance());
-        ((TextView) view.findViewById(R.id.icon_attribute)).setMovementMethod(LinkMovementMethod.getInstance());
 
         view.findViewById(R.id.more).setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW);

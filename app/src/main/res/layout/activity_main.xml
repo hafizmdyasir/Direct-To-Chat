@@ -42,9 +42,36 @@
             android:justificationMode="inter_word"
             android:id="@+id/description" />
 
-        <TextView
-            android:text="@string/phone_number"
-            style="@style/BodyHeader" />
+        <LinearLayout
+            android:layout_marginHorizontal="16dp"
+            tools:ignore="useCompoundDrawables"
+            android:layout_marginTop="24dp"
+
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/primaryMain"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/phone_number"/>
+
+            <ImageView
+                android:contentDescription="@string/paste"
+                tools:visibility="visible"
+                android:visibility="gone"
+
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_fluent_clipboard_paste_20_regular"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:tint="@color/primaryMain"
+                android:id="@+id/paste"/>
+
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_marginHorizontal="16dp"
@@ -115,6 +142,7 @@
 
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:minHeight="60dp"
             android:maxHeight="120dp"
 
             android:inputType="text|textMultiLine"
@@ -195,11 +223,12 @@
             android:orientation="horizontal"
             android:id="@+id/sendButtons">
 
+
             <com.google.android.material.button.MaterialButton
                 app:icon="@drawable/ic_fluent_send_20_regular"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="6dp"
                 android:backgroundTint="#325666"
+                android:layout_marginEnd="6dp"
 
                 android:text="@string/wa_business"
                 android:id="@+id/send_business"
