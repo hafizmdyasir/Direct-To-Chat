@@ -2,5 +2,5 @@
     <item android:drawable="?android:attr/colorBackground" android:height="2960dp" android:width="1440dp"/>
     <item android:drawable="@mipmap/ic_launcher_round" android:gravity="center" android:bottom="60dp" android:height="68dp" android:width="68dp"/>
     <item android:drawable="@drawable/ic_whatsapp_direct" android:gravity="center" android:top="90dp"/>
-    <item android:drawable="@drawable/ic_codecat" android:width="100dp" android:height="22.5dp" android:gravity="bottom|center_horizontal" android:bottom="28dp"/>
+    <item android:drawable="@drawable/ic_codecat" android:width="125dp" android:height="28.125dp" android:gravity="bottom|center_horizontal" android:bottom="28dp"/>
 </layer-list>
