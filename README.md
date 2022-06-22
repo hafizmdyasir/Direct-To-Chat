@@ -16,10 +16,8 @@ This step is quite simple. Clone this repository and open the build.gradle file 
 Once you build the project, you can install it onto any Android device running Android 9.0 Pie or above.
 Due to lack of time and resources, I am unable to create a release APK and upload it to Google Play Store. Once again, any help in this regard would be much appreciated.
 
-## Screenshots
-[![Screenshot1](https://github.com/HafizYasir/WhatsAppDirect/blob/master/Screenshot_20210813-191918_WhatsApp%20Direct.jpg "Screenshot1")](https://github.com/HafizYasir/WhatsAppDirect/blob/master/Screenshot_20210813-191918_WhatsApp%20Direct.jpg "Screenshot1")
-
-[![Screenshot 2 - Choosing a country](https://github.com/HafizYasir/WhatsAppDirect/blob/master/Screenshot_20210813-191930_WhatsApp%20Direct.jpg "Screenshot 2 - Choosing a country")](https://github.com/HafizYasir/WhatsAppDirect/blob/master/Screenshot_20210813-191930_WhatsApp%20Direct.jpg "Screenshot 2 - Choosing a country")
+## Screenshot
+[![Screenshot1](https://github.com/hafizmdyasir/WhatsAppDirect/blob/master/screenshots/Screenshot_20220622-125521_WhatsApp%20Direct.jpg)
 
 ## Attributions
 This application makes uses of the following sources:
