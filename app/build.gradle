@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 32
@@ -36,6 +37,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation "io.github.l4digital:fastscroll:2.0.1"
     implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

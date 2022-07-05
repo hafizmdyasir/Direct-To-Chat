@@ -1,77 +1,77 @@
-package com.hamohdy.whatsappdirect;
+package com.hamohdy.whatsappdirect
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-import android.view.View;
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Color
+import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import com.hamohdy.whatsappdirect.databinding.ActivityCountrySelectBinding
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.WindowInsetsControllerCompat;
+/**This activity displays a list of countries to pick a country code form, and also shows the device default country at the top. */
+class CountrySelectorActivity : AppCompatActivity() {
 
-import com.hamohdy.whatsappdirect.CountryListAdapter.CountrySelectedListener;
-import com.hamohdy.whatsappdirect.databinding.ActivityCountrySelectBinding;
+    //view binding
+    private lateinit var binding: ActivityCountrySelectBinding
 
-/**This activity displays a list of countries to pick a country code form, and also shows the device default country at the top.*/
-public class CountrySelectorActivity extends AppCompatActivity implements CountrySelectedListener {
+    //countries adapter. Passing a function to the parameter for handling item click.
+    private val adapter = CountriesAdapter{ countrySelected(it) }
 
-    private final CountryListAdapter adapter = new CountryListAdapter(this);
-    private ActivityCountrySelectBinding binding;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.WhatsAppDirect)
+        super.onCreate(savedInstanceState)
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.WhatsAppDirect);
-        super.onCreate(savedInstanceState);
-
-        binding = ActivityCountrySelectBinding.inflate(getLayoutInflater());
-        View root = binding.getRoot();
-        setContentView(root);
+        binding = ActivityCountrySelectBinding.inflate(layoutInflater)
+        val root: View = binding.root
+        setContentView(root)
 
         //We need dark status bar text during the day
-        if (!getResources().getBoolean(R.bool.nightMode)) {
-            WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), root);
-            controller.setAppearanceLightStatusBars(true);
-        } else {
-            root.setBackgroundColor(Color.BLACK);
-            getWindow().setStatusBarColor(Color.BLACK);
+        if (resources.getBoolean(R.bool.nightMode)) {
+            root.setBackgroundColor(Color.BLACK)
+            window.statusBarColor = Color.BLACK
         }
 
-        binding.counter.setText(Constants.size);
-        binding.recycler.post(() -> {
-            binding.recycler.setAdapter(adapter);
-            binding.scroller.attachRecyclerView(binding.recycler);
-            binding.scroller.setSectionIndexer(adapter);
-        });
-        getDeviceCountry();
+        //setting up layout display
+        binding.counter.text = countries.size.toString()
+        binding.recycler.adapter = adapter
+        binding.scroller.attachRecyclerView(binding.recycler)
+        binding.scroller.setSectionIndexer(adapter)
+
+        //setting up the device default country.
+        setupDeviceCountry()
     }
 
-    @Override
-    public void countrySelected(int position) {
-        Intent intent = new Intent();
-        if (position != -1) intent.putExtra("country", Constants.countries.get(position));
-        setResult(RESULT_OK, intent);
-        finish();
+    //when a country is selected by the user, its position is sent back to the main activity.
+    private fun countrySelected(position: Int) {
+
+        val intent = Intent()
+        intent.putExtra("country", position)
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
+    private fun setupDeviceCountry() {
 
-    /**Since the main activity will always be launched first, we are relying on the launch intent to get the device default country. If it is not passed, just remove visibility to prevent bad experience.*/
-    private void getDeviceCountry() {
+        val deviceCountry = deviceDefaultCountry
 
-        Country deviceCountry = getIntent().getParcelableExtra("default");
+        //device country will be null if we are unable to find a match for the device's
+        // selected country in our list of countries.
         if (deviceCountry == null) {
-            binding.deviceDefault.getRoot().setVisibility(View.GONE);
-            binding.defaultHeader.setVisibility(View.GONE);
-            return;
+            binding.deviceDefault.root.visibility = View.GONE
+            binding.defaultHeader.visibility = View.GONE
+            return
         }
 
-        String name = deviceCountry.name + ", " + deviceCountry.isoCode;
-        String dialingCode = deviceCountry.isdCode;
-        int referenceId = deviceCountry.flagCode;
+        //setup default country display
+        val name = deviceCountry.name + ", " + deviceCountry.isoCode
+        val dialingCode = deviceCountry.isdCode
+        val referenceId: Int = deviceCountry.flagResource
 
-        binding.deviceDefault.countryName.setText(name);
-        binding.deviceDefault.countryCode.setText(dialingCode);
-        binding.deviceDefault.flag.setImageResource(referenceId);
+        binding.deviceDefault.countryName.text = name
+        binding.deviceDefault.countryCode.text = dialingCode
+        binding.deviceDefault.flag.setImageResource(referenceId)
 
-        binding.deviceDefault.getRoot().setOnClickListener(v -> countrySelected(getIntent().getIntExtra("position", -1)));
+        binding.deviceDefault.root.setOnClickListener { countrySelected(-1) }
     }
 
 }

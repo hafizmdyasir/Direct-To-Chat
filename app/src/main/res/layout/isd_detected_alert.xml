@@ -33,6 +33,7 @@
 
     <TextView
         android:paddingHorizontal="16dp"
+        android:id="@+id/country_header"
         android:layout_margin="0dp"
         android:paddingTop="12dp"
         style="@style/BodyHeader"

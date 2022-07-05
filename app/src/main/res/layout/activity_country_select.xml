@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:id="@+id/headerLayout">
-
+        android:id="@+id/headerLayout"
+        android:layout_marginTop="8dp">
 
         <TextView
             style="@style/TextAppearance.MaterialComponents.Headline1"
@@ -30,13 +30,13 @@
             android:paddingHorizontal="16dp"
             android:text="@string/select_country"
             android:id="@+id/header"
-            android:textSize="38sp"
+            android:textSize="32sp"
             android:maxLines="1"
             />
 
         <TextView
-            android:background="@drawable/rounded_rectangle"
             android:textColor="@android:color/white"
+            android:background="@drawable/rounded_rectangle"
 
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

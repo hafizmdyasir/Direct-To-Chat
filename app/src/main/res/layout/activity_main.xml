@@ -19,14 +19,15 @@
 
         <TextView
             style="@style/TextAppearance.MaterialComponents.Headline1"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
 
             android:textColor="@color/primaryMain"
             android:layout_marginHorizontal="16dp"
             android:autoSizeTextType="uniform"
+            android:layout_marginTop="8dp"
             android:text="@string/app_name"
-            android:textSize="38sp"
+            android:textSize="32sp"
             android:maxLines="1" />
 
 
@@ -142,7 +143,6 @@
 
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:minHeight="60dp"
             android:maxHeight="120dp"
 
             android:inputType="text|textMultiLine"
