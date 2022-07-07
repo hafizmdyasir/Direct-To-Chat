@@ -19,7 +19,7 @@
         android:layout_marginTop="8dp">
 
         <TextView
-            style="@style/TextAppearance.MaterialComponents.Headline1"
+            style="@style/TextAppearance.Material3.HeadlineLarge"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_width="0dp"
@@ -30,13 +30,12 @@
             android:paddingHorizontal="16dp"
             android:text="@string/select_country"
             android:id="@+id/header"
-            android:textSize="32sp"
             android:maxLines="1"
             />
 
         <TextView
-            android:textColor="@android:color/white"
             android:background="@drawable/rounded_rectangle"
+            android:textColor="@android:color/white"
 
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -50,9 +49,10 @@
     </LinearLayout>
 
     <TextView
-        style="@style/BodyHeader"
+        android:id="@+id/defaultHeader"
         android:text="@string/device_default"
-        android:id="@+id/defaultHeader"/>
+        style="@style/BodyHeader"
+        />
 
     <include layout="@layout/country_list_item"
         android:id="@+id/device_default"/>

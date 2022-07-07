@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="SendButtons">
+    <style name="SendButtons" parent="Widget.Material3.Button">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">52dp</item>
     </style>
 
-    <style name="TextFormatButtons" parent="Widget.MaterialComponents.Button.OutlinedButton">
+    <style name="TextFormatButtons" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">?attr/colorAccent</item>
+        <item name="strokeColor">?attr/colorAccent</item>
         <item name="iconTint">?attr/colorAccent</item>
         <item name="android:textAllCaps">false</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="BodyHeader" parent="TextAppearance.MaterialComponents.Subtitle2">
+    <style name="BodyHeader" parent="TextAppearance.Material3.TitleSmall">
         <item name="android:textColor">@color/primaryMain</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>

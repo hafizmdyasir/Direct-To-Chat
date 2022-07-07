@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
     >
 
     <TextView
-        style="@style/TextAppearance.MaterialComponents.Headline1"
+        style="@style/TextAppearance.Material3.HeadlineMedium"
         android:text="@string/isd_code_detected"
         android:paddingHorizontal="16dp"
         android:paddingTop="16dp"
@@ -16,11 +17,10 @@
         android:textColor="?attr/colorPrimary"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:textSize="26sp"
         />
 
     <TextView
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        style="@style/TextAppearance.Material3.BodyLarge"
         android:paddingHorizontal="16dp"
         android:layout_marginTop="4dp"
 
@@ -60,7 +60,7 @@
         android:text="@string/phone_number"/>
 
     <TextView
-        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        style="@style/TextAppearance.Material3.BodyLarge"
         tools:text="1234567890"
 
         android:justificationMode="inter_word"
@@ -77,10 +77,12 @@
 
 
         <Button
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:textColor="?attr/colorAccent"
-            android:text="@android:string/cancel"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            app:strokeColor="?attr/colorPrimary"
+            android:textSize="14sp"
+
             android:id="@+id/cancel_button"
+            android:text="@android:string/cancel"
 
             android:layout_marginVertical="24dp"
             android:layout_height="wrap_content"
@@ -91,18 +93,18 @@
             />
 
         <Button
-            android:backgroundTint="?attr/colorAccent"
-            android:textColor="?android:attr/colorForeground"
+            style="@style/Widget.Material3.Button"
+            android:textSize="14sp"
+
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
 
             android:layout_marginVertical="24dp"
-            android:text="@string/ok_continue"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:id="@+id/ok_continue"
-            tools:ignore="ButtonStyle" />
+            android:text="@string/ok_continue" />
 
     </LinearLayout>
 
