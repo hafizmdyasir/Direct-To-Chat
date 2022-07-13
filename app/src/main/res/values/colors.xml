@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="accentSoft">#6E8847</color>
-    <color name="accentDark">#617C3B</color>
+    <color name="accentSoft">#2E7D32</color>
+    <color name="accentDark">#1B5E20</color>
 
-    <color name="primaryMain">#576BDC</color>
-    <color name="primaryDark">#303F9F</color>
+    <color name="bottomSheet">#FFFFFFFF</color>
+    <color name="primaryMain">#5D4D8C</color>
+    <color name="primaryDark">#5E35B1</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="backgroundColor">#FFFFFFFF</color>
 </resources>

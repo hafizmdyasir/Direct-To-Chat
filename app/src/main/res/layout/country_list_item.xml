@@ -26,19 +26,13 @@
         android:textAppearance="?attr/textAppearanceListItem"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+
         android:id="@+id/country_name"
         android:layout_width="0dp"
         android:layout_weight="1"
         tools:text="India"
         />
-
-
-    <TextView
-        android:textAppearance="?attr/textAppearanceListItemSecondary"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="@string/plus"/>
 
     <TextView
         android:layout_height="wrap_content"
@@ -48,7 +42,7 @@
         android:textAppearance="?attr/textAppearanceListItemSecondary"
         android:id="@+id/country_code"
         android:gravity="end"
-        tools:text="91"
+        tools:text="+91"
         />
 
 </LinearLayout>

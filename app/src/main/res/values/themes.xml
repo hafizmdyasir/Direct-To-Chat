@@ -1,11 +1,11 @@
 <resources>
 
-    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="BaseTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">?android:attr/colorBackground</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
-    <style name="WhatsAppDirect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="WhatsAppDirect" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryMain</item>
@@ -18,7 +18,8 @@
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <item name="android:statusBarColor">@color/backgroundColor</item>
+
         <!--Light status bar during day-->
         <item name="android:windowLightStatusBar">@bool/dayMode</item>
     </style>

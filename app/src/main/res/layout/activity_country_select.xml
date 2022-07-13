@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".CountrySelectorActivity"
 
+    android:background="@color/backgroundColor"
     android:theme="@style/WhatsAppDirect"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -76,8 +77,8 @@
             android:id="@+id/recycler"/>
 
         <com.l4digital.fastscroll.FastScroller
-            app:bubbleColor="?attr/colorAccent"
-            app:handleColor="?attr/colorAccent"
+            app:bubbleColor="?attr/colorSecondary"
+            app:handleColor="?attr/colorSecondary"
             app:hideScrollbar="false"
             app:bubbleTextSize="22sp"
             app:bubbleSize="small"

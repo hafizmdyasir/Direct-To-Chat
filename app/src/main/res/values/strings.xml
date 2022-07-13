@@ -38,4 +38,7 @@
     <string name="country">Country</string>
     <string name="ignore">Ignore</string>
     <string name="paste">Paste</string>
+
+    <string name="wa_message">Optional message to include which spans more than a single line.</string>
+    <string name="wa_number">1234567890</string>
 </resources>

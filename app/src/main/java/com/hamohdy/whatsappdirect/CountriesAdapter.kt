@@ -25,10 +25,11 @@ class CountriesAdapter(private val clickListener: (Int) -> Unit)
 
         val country = countries[position]
         val name = "${country.name}, ${country.isoCode}"
+        val code = "+${country.isdCode}"
 
-        holder.countryName.text = name
-        holder.isdCode.text = country.isdCode
         holder.flag.setImageResource(country.flagResource)
+        holder.countryName.text = name
+        holder.isdCode.text = code
     }
 
     override fun getItemCount(): Int = countries.size
@@ -44,17 +45,13 @@ class CountriesAdapter(private val clickListener: (Int) -> Unit)
     class CountryHolder(binding: CountryListItemBinding, clickListener: (Int) -> Unit)
         : RecyclerView.ViewHolder(binding.root) {
 
-        val countryName: TextView
-        val isdCode: TextView
-        val flag: ImageView
+        val countryName: TextView = binding.countryName
+        val isdCode: TextView = binding.countryCode
+        val flag: ImageView = binding.flag
 
         init {
             //set the item click listener here. This reduces overhead significantly.
             binding.root.setOnClickListener { clickListener.invoke(adapterPosition) }
-
-            countryName = binding.countryName
-            isdCode = binding.countryCode
-            flag = binding.flag
         }
     }
 }

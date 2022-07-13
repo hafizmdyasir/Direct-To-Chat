@@ -2,7 +2,6 @@ package com.hamohdy.whatsappdirect
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -22,18 +21,12 @@ class CountrySelectorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityCountrySelectBinding.inflate(layoutInflater)
-        val root: View = binding.root
-        setContentView(root)
-
-        //We need dark status bar text during the day
-        if (resources.getBoolean(R.bool.nightMode)) {
-            root.setBackgroundColor(Color.BLACK)
-            window.statusBarColor = Color.BLACK
-        }
+        setContentView(binding.root)
 
         //setting up layout display
         binding.counter.text = countries.size.toString()
         binding.recycler.adapter = adapter
+
         binding.scroller.attachRecyclerView(binding.recycler)
         binding.scroller.setSectionIndexer(adapter)
 
@@ -44,9 +37,7 @@ class CountrySelectorActivity : AppCompatActivity() {
     //when a country is selected by the user, its position is sent back to the main activity.
     private fun countrySelected(position: Int) {
 
-        val intent = Intent()
-        intent.putExtra("country", position)
-        setResult(Activity.RESULT_OK, intent)
+        setResult(Activity.RESULT_OK, Intent().apply { putExtra("country", position) })
         finish()
     }
 
@@ -63,15 +54,15 @@ class CountrySelectorActivity : AppCompatActivity() {
         }
 
         //setup default country display
-        val name = deviceCountry.name + ", " + deviceCountry.isoCode
+        val name = "${deviceCountry.name}, ${deviceCountry.isoCode}"
+        val referenceId = deviceCountry.flagResource
         val dialingCode = deviceCountry.isdCode
-        val referenceId: Int = deviceCountry.flagResource
 
-        binding.deviceDefault.countryName.text = name
-        binding.deviceDefault.countryCode.text = dialingCode
         binding.deviceDefault.flag.setImageResource(referenceId)
+        binding.deviceDefault.countryCode.text = dialingCode
+        binding.deviceDefault.countryName.text = name
 
-        binding.deviceDefault.root.setOnClickListener { countrySelected(-1) }
+        binding.deviceDefault.root.setOnClickListener { countrySelected(position = -1) }
     }
 
 }

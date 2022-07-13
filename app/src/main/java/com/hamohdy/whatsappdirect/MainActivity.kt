@@ -2,12 +2,10 @@ package com.hamohdy.whatsappdirect
 
 import android.content.ClipboardManager
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.telephony.PhoneNumberUtils
 import android.view.KeyEvent
 import android.view.View
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.hamohdy.whatsappdirect.databinding.ActivityMainBinding
@@ -39,15 +37,8 @@ class MainActivity: AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val root = binding.root
         setContentView(root)
-
-        //Black status bar at night.
-        if (resources.getBoolean(R.bool.nightMode)) {
-            root.setBackgroundColor(Color.BLACK)
-            window.statusBarColor = Color.BLACK
-        }
-
-
         setClickListeners()
+
         if (selectedCountry != null) return
 
         //If the flow comes here, it means default country hasn't been loaded
@@ -219,6 +210,13 @@ class MainActivity: AppCompatActivity() {
             else -> {}
         }
 
+        //when nothing is selected, insert the characters and go to their middle.
+        if (start == end) {
+            binding.optionalMessage.apply {
+                setSelection( if (id == R.id.mono) (selectionStart - 3) else (selectionStart - 1))
+            }
+        }
+        //request focus
         binding.optionalMessage.requestFocus()
     }
 
@@ -226,7 +224,7 @@ class MainActivity: AppCompatActivity() {
 
         //If the waNumber field has null text or is empty, or has nothing but a plus sign, handle.
         if (binding.waNumber.text == null || binding.waNumber.text.isEmpty() || binding.waNumber.text.toString() == "+") {
-            Toast.makeText(this, getString(R.string.enter_number_warn), Toast.LENGTH_SHORT).show()
+            createToast(R.string.enter_number_warn)
             return
         }
 
@@ -239,19 +237,14 @@ class MainActivity: AppCompatActivity() {
             FragmentIsdDetected
                 .newInstance(phoneNumber)
                 .setDialogClickListener {
-                    val launchIntent = getLaunchIntent(phoneNumber, message, business)
-                    if (launchIntent.resolveActivity(packageManager) != null) startActivity(launchIntent)
-                    else Toast.makeText(this, getString(R.string.not_installed), Toast.LENGTH_SHORT).show()
+                    getLaunchIntent(phoneNumber, message, business).launchIfResolved(this)
                 }
                 .show(supportFragmentManager, "ISD DETECTED")
             return
         }
 
         val phoneNumberWithIsd = selectedCountry?.isdCode + phoneNumber
-        val intent = getLaunchIntent(phoneNumberWithIsd, message, business)
-
-        if (intent.resolveActivity(packageManager) != null) startActivity(intent)
-        else Toast.makeText(this, getString(R.string.not_installed), Toast.LENGTH_SHORT).show()
+        getLaunchIntent(phoneNumberWithIsd, message, business).launchIfResolved(this)
     }
 
 }

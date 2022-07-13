@@ -24,15 +24,12 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            phoneNumber = it.getString(ARG_PHONE_NUMBER).toString()
-        }
+        arguments?.let { phoneNumber = it.getString(ARG_PHONE_NUMBER).toString() }
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
         binding = IsdDetectedAlertBinding.inflate(inflater, container, false)
         countryBinding = binding.detectedCountry
         return binding.root
@@ -51,8 +48,8 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
 
         if (detectedCountry == null) {
             binding.message.setText(R.string.isd_detected_message_no_country)
-            countryBinding.root.visibility = View.GONE
             binding.countryHeader.visibility = View.GONE
+            countryBinding.root.visibility = View.GONE
             binding.okContinue.setText(R.string.ignore)
         }
 
@@ -76,6 +73,7 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
             dialogListener.invoke()
             dismiss()
         }
+
         binding.cancelButton.setOnClickListener { dismiss() }
     }
 

@@ -11,13 +11,13 @@
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/ic_launcher_background.xml" value="0.233" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/ic_whatsapp_direct.xml" value="0.233" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/rounded_rectangle.xml" value="0.2435" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/splash_screen.xml" value="1.0" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_country_select.xml" value="0.1819078947368421" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_main.xml" value="0.335" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/country_list_item.xml" value="0.1819078947368421" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/fragment_about.xml" value="0.375" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/splash_screen.xml" value="0.5" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_country_select.xml" value="0.335" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/country_list_item.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/fragment_about.xml" value="0.335" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/fragment_isd_detected.xml" value="0.1819078947368421" />
-        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/isd_detected_alert.xml" value="0.375" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/isd_detected_alert.xml" value="0.335" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.233" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.233" />
         <entry key="..\:/Users/Mohammad Yasir/Android Studio/whatsappdirect/app/src/main/res/drawable/ic_fluent_chevron_down_20_regular.xml" value="0.19283387622149836" />

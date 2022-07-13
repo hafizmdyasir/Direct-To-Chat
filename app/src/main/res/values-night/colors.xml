@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accentSoft">#699b6b</color>
+    <color name="accentDark">#617C3B</color>
+
+    <color name="bottomSheet">#222222</color>
+    <color name="primaryMain">#B8AAFF</color>
+    <color name="primaryDark">#5D4D8C</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="backgroundColor">#000000</color>
+</resources>
