@@ -1,11 +1,11 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.hamohdy.whatsappdirect.databinding.ActivityCountrySelectBinding
+import com.codecat.directtochat.databinding.ActivityCountrySelectBinding
 
 /**This activity displays a list of countries to pick a country code form, and also shows the device default country at the top. */
 class CountrySelectorActivity : AppCompatActivity() {
@@ -17,7 +17,6 @@ class CountrySelectorActivity : AppCompatActivity() {
     private val adapter = CountriesAdapter{ countrySelected(it) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.WhatsAppDirect)
         super.onCreate(savedInstanceState)
 
         binding = ActivityCountrySelectBinding.inflate(layoutInflater)
@@ -55,8 +54,8 @@ class CountrySelectorActivity : AppCompatActivity() {
 
         //setup default country display
         val name = "${deviceCountry.name}, ${deviceCountry.isoCode}"
+        val dialingCode = "+${deviceCountry.isdCode}"
         val referenceId = deviceCountry.flagResource
-        val dialingCode = deviceCountry.isdCode
 
         binding.deviceDefault.flag.setImageResource(referenceId)
         binding.deviceDefault.countryCode.text = dialingCode

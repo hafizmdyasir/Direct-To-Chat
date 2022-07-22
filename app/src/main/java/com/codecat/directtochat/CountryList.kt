@@ -1,4 +1,4 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 /**This file holds an instance of an [ArrayList] object which references all the countries pre defined in this project.
  * */

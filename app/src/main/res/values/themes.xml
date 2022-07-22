@@ -5,7 +5,7 @@
         <item name="android:windowBackground">@drawable/splash_screen</item>
     </style>
 
-    <style name="WhatsAppDirect" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="MainTheme" parent="Theme.Material3.DayNight.NoActionBar">
 
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryMain</item>

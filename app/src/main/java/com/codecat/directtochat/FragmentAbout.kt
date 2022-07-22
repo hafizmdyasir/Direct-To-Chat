@@ -1,4 +1,4 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.content.Intent
 import android.net.Uri
@@ -7,17 +7,18 @@ import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codecat.directtochat.databinding.FragmentAboutBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.hamohdy.whatsappdirect.databinding.FragmentAboutBinding
 
 /**A simple bottom sheet dialog fragment to display about text, a disclaimer, and a couple of attributions about the libraries and sources used. */
 class FragmentAbout : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FragmentAboutBinding
+    private var _binding: FragmentAboutBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        binding = FragmentAboutBinding.inflate(inflater, container, false)
+        _binding = FragmentAboutBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,5 +34,10 @@ class FragmentAbout : BottomSheetDialogFragment() {
             intent.data = Uri.parse("https://hafizmdyasir.github.io")
             startActivity(Intent.createChooser(intent, getString(R.string.open_via)))
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

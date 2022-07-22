@@ -1,13 +1,13 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.os.Bundle
 import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.codecat.directtochat.databinding.CountryListItemBinding
+import com.codecat.directtochat.databinding.IsdDetectedAlertBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.hamohdy.whatsappdirect.databinding.CountryListItemBinding
-import com.hamohdy.whatsappdirect.databinding.IsdDetectedAlertBinding
 
 /**The [FragmentIsdDetected] fragment is shown when the user inputs a + sign in the phone number field in the [MainActivity].
  *
@@ -15,10 +15,12 @@ import com.hamohdy.whatsappdirect.databinding.IsdDetectedAlertBinding
  *
  * Use [FragmentIsdDetected.newInstance] to create an instance of this fragment.*/
 class FragmentIsdDetected : BottomSheetDialogFragment() {
-    
+
+    private var _binding: IsdDetectedAlertBinding? = null
+    private val binding get() = _binding!!
+
     private lateinit var countryBinding: CountryListItemBinding
-    private lateinit var binding: IsdDetectedAlertBinding
-    
+
     private lateinit var dialogListener: () -> Unit
     private lateinit var phoneNumber: String
 
@@ -30,7 +32,7 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
-        binding = IsdDetectedAlertBinding.inflate(inflater, container, false)
+        _binding = IsdDetectedAlertBinding.inflate(inflater, container, false)
         countryBinding = binding.detectedCountry
         return binding.root
     }
@@ -56,13 +58,20 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
         //Otherwise, we have been successful in detecting a country.
         else {
             countryBinding.flag.setImageResource(detectedCountry.flagResource)
-            countryBinding.countryCode.text = detectedCountry.isdCode
             countryBinding.countryName.text = detectedCountry.name
+
+            val code = "+${detectedCountry.isdCode}"
+            countryBinding.countryCode.text = code
 
             //Show the number without the ISD code separately to clarify things up.
             strippedNumber = phoneNumber
                 .replace("+", "")
                 .replaceFirst(detectedCountry.isdCode, "")
+
+            if (strippedNumber.isEmpty()) {
+                strippedNumber = getString(R.string.no_number_entered)
+                binding.okContinue.isEnabled = false
+            }
         }
 
         //The phoneNumber TextView should show text like a phone number. Duh!
@@ -75,6 +84,11 @@ class FragmentIsdDetected : BottomSheetDialogFragment() {
         }
 
         binding.cancelButton.setOnClickListener { dismiss() }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     fun setDialogClickListener(listener: () -> Unit): FragmentIsdDetected {

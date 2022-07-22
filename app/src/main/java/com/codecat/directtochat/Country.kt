@@ -1,4 +1,4 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 /**A data class to hold data about countries.
  * @param name The country name

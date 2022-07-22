@@ -1,4 +1,4 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.content.ClipboardManager
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.view.KeyEvent
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.hamohdy.whatsappdirect.databinding.ActivityMainBinding
+import com.codecat.directtochat.databinding.ActivityMainBinding
 
 class MainActivity: AppCompatActivity() {
 
@@ -31,7 +31,7 @@ class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.WhatsAppDirect)
+        setTheme(R.style.MainTheme)
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -234,8 +234,7 @@ class MainActivity: AppCompatActivity() {
         //If the user entered a phone number along with ISD code, alert them.
         //Note that for now, this relies on the presence of the "+" symbol in the number.
         if (phoneNumber.contains("+")) {
-            FragmentIsdDetected
-                .newInstance(phoneNumber)
+            FragmentIsdDetected.newInstance(phoneNumber)
                 .setDialogClickListener {
                     getLaunchIntent(phoneNumber, message, business).launchIfResolved(this)
                 }

@@ -12,7 +12,6 @@
 
     <ImageView
         android:contentDescription="@string/country_flag"
-        android:layout_gravity="center_vertical"
         android:layout_marginStart="12dp"
         tools:src="@mipmap/in"
 

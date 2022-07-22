@@ -1,8 +1,8 @@
-# Privacy Policy for WhatsApp Direct
+# Privacy Policy for Direct to Chat
 > As a valued user, your privacy is important.
 
 ## General information
-I don't believe in long and lengthy policies that the user cannot understand. Instead, here is what you must understand about using WhatsApp Direct, which I call "the app" in this document:
+I don't believe in long and lengthy policies that the user cannot understand. Instead, here is what you must understand about using Direct to Chat, which I call "the app" in this document:
 1. Neither I nor the app collects any data whatsoever from your device.
 2. I have made efforts, to the best of my abilities, to keep user privacy at the core of my philosophy.
 3. This app in itself does not contain data, information, or content not suitable for children. However, it is used to open WhatsApp chats and the chat windows opened are at the sole discretion of the user. Whatever number you enter, the app will try to open the corresponding chat window. 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.codecat.directtochat.CountrySelectorActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".CountrySelectorActivity"
 
     android:background="@color/backgroundColor"
-    android:theme="@style/WhatsAppDirect"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"

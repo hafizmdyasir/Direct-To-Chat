@@ -1,11 +1,11 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.hamohdy.whatsappdirect.databinding.CountryListItemBinding
+import com.codecat.directtochat.databinding.CountryListItemBinding
 import com.l4digital.fastscroll.FastScroller
 
 /**Extends from [RecyclerView.Adapter] and is used to display a list of countries the user can select from.

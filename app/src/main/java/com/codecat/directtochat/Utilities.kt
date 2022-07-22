@@ -1,4 +1,4 @@
-package com.hamohdy.whatsappdirect
+package com.codecat.directtochat
 
 import android.content.Context
 import android.content.Intent
@@ -40,8 +40,7 @@ fun detectCountry(phoneNumber: String): Country? {
 fun getLaunchIntent(phoneNumber: String, message: String, business: Boolean): Intent {
 
     val total = "https://api.whatsapp.com/send?phone=" +
-            phoneNumber.replace("+", "") +
-            "&text=${message}"
+            phoneNumber.replace("+", "") + "&text=${message}"
 
     val intent = Intent(Intent.ACTION_VIEW).apply {
         data = Uri.parse(total)
