@@ -29,6 +29,9 @@ class FragmentAbout : BottomSheetDialogFragment() {
         //These links are visible in the R.string file and were created using the <a> tag.
         binding.attributions.movementMethod = LinkMovementMethod.getInstance()
 
+        binding.privacy.setOnClickListener {
+            startActivity(Intent(requireContext(), PrivacyPolicyActivity::class.java))
+        }
         binding.more.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
             intent.data = Uri.parse("https://hafizmdyasir.github.io")

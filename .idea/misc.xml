@@ -14,6 +14,7 @@
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/drawable/splash_screen.xml" value="0.5" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_country_select.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/activity_policy.xml" value="0.11748633879781421" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/country_list_item.xml" value="0.25" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/fragment_about.xml" value="0.335" />
         <entry key="..\:/Android Studio Projects/whatsappdirect/app/src/main/res/layout/fragment_isd_detected.xml" value="0.1819078947368421" />
@@ -28,7 +29,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

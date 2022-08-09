@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context="com.codecat.directtochat.FragmentAbout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:background="@color/bottomSheet"
@@ -60,6 +61,20 @@
         />
 
     <Button
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:textSize="16sp"
+
+        android:text="@string/privacy_policy_title"
+        android:textColor="?attr/colorSecondary"
+        app:strokeColor="?attr/colorSecondary"
+
+        android:layout_marginHorizontal="16dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:id="@+id/privacy"/>
+
+    <Button
         android:backgroundTint="?attr/colorSecondary"
         style="@style/Widget.Material3.Button"
         android:textSize="16sp"
@@ -67,7 +82,6 @@
         android:layout_marginHorizontal="16dp"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp"
         android:text="@string/name"
         android:id="@+id/more"/>
 
