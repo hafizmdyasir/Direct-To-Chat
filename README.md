@@ -21,7 +21,7 @@ This step is quite simple. Clone this repository and open the build.gradle file 
 Once you build the project, you can install it onto any Android device running Android 9.0 Pie or above.
 
 ## Screenshot
-[![Screenshot1](https://github.com/hafizmdyasir/WhatsAppDirect/blob/master/screenshots/Screenshot_20220622-125521_WhatsApp%20Direct.jpg)
+![Screenshot1](https://github.com/hafizmdyasir/WhatsAppDirect/blob/master/screenshots/Screenshot_20220622-125521_WhatsApp%20Direct.jpg)
 
 ## Attributions
 This application makes uses of the following sources:
